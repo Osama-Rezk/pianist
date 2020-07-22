@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Header Component user not logged in should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Header Component while user logged in  should render correctly 1`] = `ReactWrapper {}`;
