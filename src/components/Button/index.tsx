@@ -8,6 +8,10 @@ const StyledButton = styled.button({
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
 }
-export const Button: React.FC<ButtonProps> = ({ title, onClick }) => {
-  return <StyledButton onClick={onClick}>{title}</StyledButton>;
+export const Button: React.FC<ButtonProps> = ({ title, onClick, ...rest }) => {
+  return (
+    <StyledButton onClick={onClick} {...rest}>
+      {title}
+    </StyledButton>
+  );
 };

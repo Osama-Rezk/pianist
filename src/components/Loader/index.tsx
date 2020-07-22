@@ -1,56 +1,37 @@
-import React from "react";
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/core";
 
-export const Loader: React.FC = () => {
-  return (
-    <div>
-      <style>
-        {`     
-.loader,
-.loader:after {
-  border-radius: 50%;
-  width: 10em;
-  height: 10em;
+const load8 = keyframes`
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
-.loader {
-  margin: 60px auto;
-  font-size: 10px;
-  position: relative;
-  text-indent: -9999em;
-  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-left: 1.1em solid #007aff;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
+100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
-@-webkit-keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
+`;
 
-    `}
-        >
-      </style>
-      <div className="loader">Loading...</div>
-    </div>
-  );
-};
+export const Loader = styled.div({
+  margin: "60px auto",
+  fontSize: "10px",
+  position: "relative",
+  textIndent: "-9999em",
+  borderTop: "1.1em solid rgba(255, 255, 255, 0.2)",
+  borderRight: "1.1em solid rgba(255, 255, 255, 0.2)",
+  borderBottom: "1.1em solid rgba(255, 255, 255, 0.2)",
+  borderLeft: "1.1em solid #007aff",
+  WebkitTransform: "translateZ(0)",
+  MsTransform: "translateZ(0)",
+  transform: "translateZ(0)",
+  animation: `${load8} 1.1s infinite linear`,
+  borderRadius: "50%",
+  width: "10em",
+  height: "10em",
+
+  "&:after": {
+    borderRadius: "50%",
+    width: "10em",
+    height: "10em",
+  },
+});

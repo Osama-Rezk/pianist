@@ -25,7 +25,7 @@ export const ArtistCard: React.FC<Artist> = (props) => {
   const { name, picture } = props;
   return (
     <Container>
-      <Image id="artistpic" src={picture} />
+      <Image alt={`a picture of artist ${name}`} id="artistpic" src={picture} />
       <Description id="artistname">{name}</Description>
     </Container>
   );

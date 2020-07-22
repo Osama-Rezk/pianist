@@ -4,7 +4,7 @@ export const loginUrl =
 export const baseURL =
   "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
 
-export const genAuthURL = (code) =>
+export const genAuthURL = (code: any) =>
   `https://cors-anywhere.herokuapp.com/https://connect.deezer.com/oauth/access_token.php?app_id=426082&secret=254ec84cad97f01839e63e40cc5b8abe&code=${code}&output=JSON`;
 
 export const authUrl =

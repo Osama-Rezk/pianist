@@ -8,6 +8,7 @@ import { Loader } from "../Loader";
 import { Error } from "../Error";
 import styled from "@emotion/styled";
 import backIcon from "../../assets/back.svg";
+import { Global, css } from "@emotion/core";
 interface ArtistModalProps {
   isOpen: boolean;
   closeModal: () => void;
@@ -60,26 +61,26 @@ export const ArtistsModal: React.FC<ArtistModalProps> = ({
 
   return (
     <>
-      <style>
-        {`     
- .ReactModal__Overlay {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 500ms ease-in-out;
-}
+      <Global
+        styles={css`
+          .ReactModal__Overlay {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 500ms ease-in-out;
+          }
 
-.ReactModal__Overlay--after-open {
-  opacity: 1;
-  transform: translateX(0px);
-}
+          .ReactModal__Overlay--after-open {
+            opacity: 1;
+            transform: translateX(0px);
+          }
 
-.ReactModal__Overlay--before-close {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-`}
-        >
-      </style>
+          .ReactModal__Overlay--before-close {
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+        `}
+      />
+
       <Modal
         ariaHideApp={false}
         closeTimeoutMS={500}
@@ -90,7 +91,7 @@ export const ArtistsModal: React.FC<ArtistModalProps> = ({
       >
         <ModalHeader>
           <CloseButton onClick={closeModal}>
-            <Image src={backIcon} />
+            <Image alt="bacK Arrow iamge" src={backIcon} />
           </CloseButton>
         </ModalHeader>
         <ModalBody>

@@ -42,7 +42,7 @@ export const GenreCard: React.FC<GenreCardProps> = (props) => {
   return (
     <Container onClick={() => onClick(id)}>
       <Description id="genrename">{name}</Description>
-      <Image id="genrepic" src={picture} />
+      <Image alt={`a picture of genre ${name}`} id="genrepic" src={picture} />
       <Button
         title="show artists"
         onClick={(e) => {

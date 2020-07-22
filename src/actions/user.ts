@@ -10,7 +10,6 @@ export function signIn(code: LoginQuery, history: any) {
       let res: any = await Axios.get(genAuthURL(code));
 
       if (res.data === "wrong code") {
-        //login failed
         throw new Error("login faileds");
       } else if (res.data.access_token) {
         localStorage.setItem("access_token", res.data.access_token);
